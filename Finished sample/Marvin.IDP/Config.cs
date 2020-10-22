@@ -44,7 +44,20 @@ namespace Marvin.IDP
                     AllowedScopes = { "openid", "profile", "email", "bethanyspieshophrapi", "country" },
                     AllowedCorsOrigins = { "https://localhost:44341" },
                     RequireConsent = false
-                }             
+                },
+                new Client
+                {
+                    ClientId = "6sq02di5g0i88bd7dt60j927tc",
+                    ClientName = "Blazor Client Security Prototype",
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequireClientSecret = false,
+                    RequirePkce = true,
+                    RedirectUris = { "https://localhost:5011/loginSuccess" },
+                    PostLogoutRedirectUris = { "https://localhost:5011/logoutSuccess" },
+                    AllowedScopes = { "openid", "profile", "email" },
+                    AllowedCorsOrigins = { "https://localhost:5011" },
+                    RequireConsent = false
+                }
             };
     }
 }
