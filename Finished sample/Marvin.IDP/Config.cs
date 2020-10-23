@@ -1,7 +1,6 @@
 ﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-
 using IdentityModel;
 using IdentityServer4.Models;
 using System.Collections.Generic;
@@ -19,19 +18,20 @@ namespace Marvin.IDP
                 new IdentityResource("country", new [] { "country" })
             };
 
-
         public static IEnumerable<ApiResource> Apis =>
             new ApiResource[]
             {
-                new ApiResource("bethanyspieshophrapi", 
-                    "Bethany's Pie Shop HR API", 
+                new ApiResource("bethanyspieshophrapi",
+                    "Bethany's Pie Shop HR API",
+                    new [] { "country" }),
+                new ApiResource("BlazorClientSecurityAPI",
+                    "Blazor Client Side Security API",
                     new [] { "country" })
             };
 
-
         public static IEnumerable<Client> Clients =>
             new Client[]
-            { 
+            {
                 new Client
                 {
                     ClientId = "bethanyspieshophr",
@@ -54,7 +54,7 @@ namespace Marvin.IDP
                     RequirePkce = true,
                     RedirectUris = { "https://localhost:5011/loginSuccess" },
                     PostLogoutRedirectUris = { "https://localhost:5011/logoutSuccess" },
-                    AllowedScopes = { "openid", "profile", "email" },
+                    AllowedScopes = { "openid", "profile", "email", "BlazorClientSecurityAPI" },
                     AllowedCorsOrigins = { "https://localhost:5011" },
                     RequireConsent = false
                 }
