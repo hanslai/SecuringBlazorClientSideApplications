@@ -24,7 +24,7 @@ namespace Marvin.IDP
                 new ApiResource("bethanyspieshophrapi",
                     "Bethany's Pie Shop HR API",
                     new [] { "country" }),
-                new ApiResource("BlazorClientSecurityAPI",
+                new ApiResource("BlazorClientSecurityPrototypeAPI",
                     "Blazor Client Side Security API",
                     new [] { "country" })
             };
@@ -52,10 +52,10 @@ namespace Marvin.IDP
                     AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret = false,
                     RequirePkce = true,
-                    RedirectUris = { "https://localhost:5011/loginSuccess" },
-                    PostLogoutRedirectUris = { "https://localhost:5011/logoutSuccess" },
-                    AllowedScopes = { "openid", "profile", "email", "BlazorClientSecurityAPI" },
-                    AllowedCorsOrigins = { "https://localhost:5011" },
+                    RedirectUris = { "https://localhost:44307/loginSuccess" },
+                    PostLogoutRedirectUris = { "https://localhost:44307/logoutSuccess" },
+                    AllowedScopes = { "openid", "profile", "email", "BlazorClientSecurityPrototypeAPI" },
+                    AllowedCorsOrigins = { "https://localhost:44307" },
                     RequireConsent = false
                 }
             };
